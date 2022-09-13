@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  border: none;
+  width: 100%;
+  border-radius: 8px;
+  padding: 18px 0 14px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  font-size: 48px;
+}
+
+.container {
+  width: 540px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (max-width: 540px) {
+  .container {
+    width: 300px;
+  }
+}
+
+.home {
+  color: #FFFFFF;
+}
+
+.home ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home ul li {
+  width: 180px;
+  height: 180px;
+  font-size: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-style: italic;
+  font-weight: bold;
+}
+
+@media (max-width: 540px) {
+  .home ul li {
+    width: 100px;
+    height: 100px;
+    font-size: 55px;
+  }
+}
+
+.home ul li div {
+  width: 100%;
+  height: 100%;
+}
+
+.home ul .noughts-solid {
+  position: relative;
+}
+
+.home ul .noughts-solid::before {
+  content: '';
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 10px solid #FF6D70;
+}
+
+@media (max-width: 540px) {
+  .home ul .noughts-solid::before {
+    width: 60px;
+    height: 60px;
+    border-width: 6px;
+  }
+}
+
+.home ul .noughts-border {
+  position: relative;
+}
+
+.home ul .noughts-border::before, .home ul .noughts-border::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 4px solid #FF6D70;
+}
+
+@media (max-width: 540px) {
+  .home ul .noughts-border::before, .home ul .noughts-border::after {
+    border-width: 2px;
+  }
+}
+
+.home ul .noughts-border::before {
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 540px) {
+  .home ul .noughts-border::before {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.home ul .noughts-border::after {
+  width: 70px;
+  height: 70px;
+}
+
+@media (max-width: 540px) {
+  .home ul .noughts-border::after {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.home ul .crosses-solid {
+  position: relative;
+}
+
+.home ul .crosses-solid::before, .home ul .crosses-solid::after {
+  content: '';
+  width: 120px;
+  height: 10px;
+  background: #FF6D70;
+}
+
+@media (max-width: 540px) {
+  .home ul .crosses-solid::before, .home ul .crosses-solid::after {
+    width: 60px;
+    height: 5px;
+  }
+}
+
+.home ul .crosses-solid::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.home ul .crosses-solid::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(315deg);
+          transform: translate(-50%, -50%) rotate(315deg);
+}
+
+.home ul .crosses-border {
+  position: relative;
+}
+
+.home ul .crosses-border::before, .home ul .crosses-border::after {
+  content: '';
+  width: 120px;
+  height: 14px;
+  background: #FFFFFF;
+}
+
+@media (max-width: 540px) {
+  .home ul .crosses-border::before, .home ul .crosses-border::after {
+    width: 60px;
+    height: 10px;
+  }
+}
+
+.home ul .crosses-border::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.home ul .crosses-border::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(315deg);
+          transform: translate(-50%, -50%) rotate(315deg);
+}
+
+.home ul .crosses-border div::before, .home ul .crosses-border div::after {
+  content: '';
+  width: 116px;
+  height: 10px;
+  background: #000000;
+  z-index: 1;
+}
+
+@media (max-width: 540px) {
+  .home ul .crosses-border div::before, .home ul .crosses-border div::after {
+    width: 55px;
+    height: 5px;
+  }
+}
+
+.home ul .crosses-border div::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.home ul .crosses-border div::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(315deg);
+          transform: translate(-50%, -50%) rotate(315deg);
+}
+
+.home button {
+  background: #FFFFFF;
+}
+
+.home button a {
+  color: #FF6D70;
+  width: 100%;
+  font-weight: bold;
+}
+
+@media (max-width: 540px) {
+  .home button a {
+    font-size: 24px;
+  }
+}
+
+.home button:hover {
+  background-color: #FF6D70;
+}
+
+.home button:hover a {
+  color: #FFFFFF;
+}
+/*# sourceMappingURL=all.css.map */

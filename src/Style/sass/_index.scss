@@ -1,0 +1,8 @@
+.container{
+  width: 540px;
+  margin: 0 auto;
+  @include position-center;
+  @media (max-width:540px) {
+    width: 300px;
+  }
+}

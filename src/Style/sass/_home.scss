@@ -1,0 +1,151 @@
+.home {
+  color: $white;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      @include gameSize(180px, 180px, 100px);
+      @include flex-center;
+      font-style: italic;
+      font-weight: bold;
+
+      @media (max-width:540px) {
+        @include gameSize(100px, 100px, 55px);
+      }
+
+      div {
+        @include size (100%, 100%)
+      }
+    }
+
+    .noughts-solid {
+      position: relative;
+
+      &::before {
+        content: '';
+        @include size(100px, 100px);
+        @include position-center;
+        border-radius: 50%;
+        border: 10px solid $primary;
+
+        @media (max-width:540px) {
+          @include size(60px, 60px);
+          border-width: 6px;
+        }
+      }
+    }
+
+    .noughts-border {
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        @include position-center;
+        border-radius: 50%;
+        border: 4px solid $primary;
+
+        @media (max-width:540px) {
+          border-width: 2px;
+        }
+      }
+
+      &::before {
+        @include size(100px, 100px);
+
+        @media (max-width:540px) {
+          @include size(60px, 60px);
+        }
+      }
+
+      &::after {
+        @include size(70px, 70px);
+
+        @media (max-width:540px) {
+          @include size(40px, 40px);
+        }
+      }
+
+    }
+
+    .crosses-solid {
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        @include size(120px, 10px);
+        background: $primary;
+        @media (max-width:540px) {
+          @include size(60px, 5px);
+        }
+      }
+
+      @include crosses-rotate;
+
+    }
+
+    .crosses-border {
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        @include size(120px, 14px);
+        background: $white;
+        @media (max-width:540px) {
+          @include size(60px, 10px);
+        }
+      }
+
+      @include crosses-rotate;
+
+      div {
+
+        &::before,
+        &::after {
+          content: '';
+          @include size (116px, 10px);
+          background: $black;
+          z-index: 1;
+          @media (max-width:540px) {
+            @include size(55px, 5px);
+          }
+        }
+
+        &::before {
+          @include position-center-rotate(45deg);
+        }
+
+        &::after {
+          @include position-center-rotate(315deg);
+        }
+      }
+    }
+  }
+
+  button {
+    background: $white;
+
+    a {
+      color: $primary;
+      width: 100%;
+      font-weight: bold;
+      @media (max-width:540px) {
+        font-size: 24px;
+      }
+    }
+
+    &:hover {
+      background-color: $primary;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+}

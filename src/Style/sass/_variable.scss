@@ -1,0 +1,45 @@
+$primary: #FF6D70;
+$secondary: #ED494C;
+$white: #FFFFFF;
+$black: #000000;
+
+@mixin gameSize($w, $h, $fz) {
+  width: $w;
+  height: $h;
+  font-size: $fz;
+}
+
+@mixin size ($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin position-center-rotate($r) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate($r);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin crosses-rotate {
+  &::before {
+    @include position-center-rotate(45deg);
+  }
+
+  &::after {
+    @include position-center-rotate(315deg);
+  }
+}
