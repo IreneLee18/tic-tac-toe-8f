@@ -1,16 +1,17 @@
-import Home from "./Components/Home";
-import Game from "./Components/Game";
-import Winner from "./Components/Winner";
 import {Routes,Route} from 'react-router-dom'
+import Home from "./Pages/Home";
+import Game from "./Pages/Game";
+import Winner from "./Pages/Winner";
+import WinnerId from "./Pages/Components/WinnerId";
 function App() {
   return (
     <>
     <Routes>
-      <Route index element={<Home/>}></Route>
-      <Route path="game" element={<Game/>}></Route>
-      <Route path="winner" element={<Winner/>}></Route>
-      <Route></Route>
-      <Route></Route>
+      <Route index element={<Home/>}/>
+      <Route path="game" element={<Game/>}/>
+      <Route path="winner" element={<Winner/>}>
+        <Route path="id" element={<WinnerId/>}/>
+      </Route>
     </Routes>
     </>
   );

@@ -1,10 +1,11 @@
 import { Link,useNavigate } from "react-router-dom";
-function Game() {
+import WinnerId from "./Components/WinnerId";
+function Winner() {
   let navigate = useNavigate();
 
   return (
     <div style={{background:'#FF6D70',height:"100vh"}}>
-      <div className="container game">
+      <div className="container winner">
         <header>
           <div className="scores-group">
             <div className="scores">
@@ -19,17 +20,7 @@ function Game() {
           </div>
           <div className="your-turn">YOUR TURN!</div>
         </header>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+        <WinnerId></WinnerId>
         <button onClick={()=>{navigate("winner")}}>
           <Link to="winner">RESTART</Link>
         </button>
@@ -37,4 +28,4 @@ function Game() {
     </div>
   );
 }
-export default Game;
+export default Winner;
