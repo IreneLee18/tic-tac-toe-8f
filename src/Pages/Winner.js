@@ -21,8 +21,8 @@ function Winner() {
           <div className="your-turn">YOUR TURN!</div>
         </header>
         <WinnerId></WinnerId>
-        <button onClick={()=>{navigate("winner")}}>
-          <Link to="winner">RESTART</Link>
+        <button onClick={()=>{navigate("/")}}>
+          <Link to="/">RESTART</Link>
         </button>
       </div>
     </div>
