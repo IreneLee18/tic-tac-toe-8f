@@ -6,17 +6,13 @@
     flex-wrap: wrap;
 
     li {
-      @include gameSize(180px, 180px, 100px);
+      @include gameSize(180px, 180px, 100px, 100px, 100px, 55px);
       @include flex-center;
       font-style: italic;
       font-weight: bold;
 
-      @media (max-width:540px) {
-        @include gameSize(100px, 100px, 55px);
-      }
-
       div {
-        @include size (100%, 100%)
+        @include size (100%, 100%, 100%, 100%)
       }
     }
 
@@ -40,19 +36,11 @@
       }
 
       &::before {
-        @include size(100px, 100px);
-
-        @media (max-width:540px) {
-          @include size(60px, 60px);
-        }
+        @include size(100px, 100px, 60px, 60px);
       }
 
       &::after {
-        @include size(70px, 70px);
-
-        @media (max-width:540px) {
-          @include size(40px, 40px);
-        }
+        @include size(70px, 70px, 40px, 40px);
       }
 
     }
@@ -67,12 +55,8 @@
       &::before,
       &::after {
         content: '';
-        @include size(120px, 14px);
+        @include size(120px, 14px, 60px, 10px);
         background: $white;
-
-        @media (max-width:540px) {
-          @include size(60px, 10px);
-        }
       }
 
       @include crosses-rotate;
@@ -82,13 +66,9 @@
         &::before,
         &::after {
           content: '';
-          @include size (116px, 10px);
+          @include size (116px, 10px, 55px, 5px);
           background: $black;
           z-index: 1;
-
-          @media (max-width:540px) {
-            @include size(55px, 5px);
-          }
         }
 
         &::before {

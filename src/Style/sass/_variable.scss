@@ -3,15 +3,26 @@ $secondary: #ED494C;
 $white: #FFFFFF;
 $black: #000000;
 
-@mixin gameSize($w, $h, $fz) {
+@mixin gameSize($w, $h, $fz, $sw, $sh, $sfz) {
   width: $w;
   height: $h;
   font-size: $fz;
+
+  @media (max-width:540px) {
+    width: $sw;
+    height: $sh;
+    font-size: $sfz;
+  }
 }
 
-@mixin size ($w, $h) {
+@mixin size ($w, $h, $sw, $sh) {
   width: $w;
   height: $h;
+
+  @media (max-width:540px) {
+    width: $sw;
+    height: $sh;
+  }
 }
 
 @mixin position-center {
@@ -66,7 +77,7 @@ $black: #000000;
   }
 }
 
-@mixin noughts-solid($ls,$lb,$ss,$sb,$color) {
+@mixin noughts-solid($ls, $lb, $ss, $sb, $color) {
   position: relative;
 
   &::before {
@@ -77,26 +88,27 @@ $black: #000000;
     border: $lb solid $color;
 
     @media (max-width:540px) {
-      @include size($ss,$ss);
+      @include size($ss, $ss);
       border-width: $sb;
     }
-  }  
+  }
 }
-@mixin crosses-solid ($w,$h,$sw,$sh,$color) {
+
+@mixin crosses-solid ($w, $h, $sw, $sh, $color) {
   position: relative;
 
-      &::before,
-      &::after {
-        content: '';
-        @include size($h, $w);
-        background: $color;
+  &::before,
+  &::after {
+    content: '';
+    @include size($h, $w);
+    background: $color;
 
-        @media (max-width:540px) {
-          @include size($sw, $sh);
-        }
-      }
+    @media (max-width:540px) {
+      @include size($sw, $sh);
+    }
+  }
 
-      @include crosses-rotate;
+  @include crosses-rotate;
 }
 
 @mixin scores ($bg, $t, $l, $b, $r) {
