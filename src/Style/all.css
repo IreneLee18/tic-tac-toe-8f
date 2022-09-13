@@ -172,14 +172,14 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .home ul li {
@@ -288,8 +288,8 @@ a {
 
 .home ul .crosses-solid::before, .home ul .crosses-solid::after {
   content: '';
-  width: 120px;
-  height: 10px;
+  width: 10px;
+  height: 120px;
   background: #FF6D70;
 }
 
@@ -403,5 +403,297 @@ a {
 
 .home button:hover a {
   color: #FFFFFF;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-weight: bold;
+}
+
+header .your-turn {
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+@media (max-width: 540px) {
+  header .your-turn {
+    font-size: 14px;
+  }
+}
+
+header .scores-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-bottom: 8px;
+}
+
+header .vs {
+  width: 70px;
+  height: 71px;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 8px 8px 0px 0px;
+  background: #000000;
+  color: #FFFFFF;
+}
+
+@media (max-width: 540px) {
+  header .vs {
+    width: 40px;
+    height: 51px;
+    font-size: 20px;
+  }
+}
+
+header .scores {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 235px;
+  height: 64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 4px solid #000000;
+  z-index: 1;
+}
+
+@media (max-width: 540px) {
+  header .scores {
+    width: 130px;
+    height: 44px;
+  }
+}
+
+header .scores:first-child {
+  border-radius: 8px 0px 0px 8px;
+}
+
+header .scores:last-child {
+  border-radius: 0px 8px 8px 0px;
+}
+
+header .scores .scores-item {
+  width: 171px;
+  height: 100%;
+  font-size: 48px;
+  background: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 540px) {
+  header .scores .scores-item {
+    width: 94px;
+    height: 100%;
+    font-size: 24px;
+  }
+}
+
+header .scores .crosses-scores {
+  width: 54px;
+  height: 100%;
+  background: #ED494C;
+  border-radius: 4px 0px 0px 4px;
+  position: relative;
+  border-right: 4px solid #000000;
+}
+
+header .scores .crosses-scores::before, header .scores .crosses-scores::after {
+  content: '';
+  width: 5px;
+  height: 36px;
+  background: #FFFFFF;
+}
+
+@media (max-width: 540px) {
+  header .scores .crosses-scores::before, header .scores .crosses-scores::after {
+    width: 24px;
+    height: 3px;
+  }
+}
+
+header .scores .crosses-scores::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+header .scores .crosses-scores::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(315deg);
+          transform: translate(-50%, -50%) rotate(315deg);
+}
+
+header .scores .noughts-scores {
+  width: 54px;
+  height: 100%;
+  background: #000000;
+  border-radius: 0px 4px 4px 0px;
+  position: relative;
+  border-left: 4px solid #000000;
+}
+
+header .scores .noughts-scores::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 5px solid #FFFFFF;
+}
+
+@media (max-width: 540px) {
+  header .scores .noughts-scores::before {
+    width: 24px;
+    height: 24px;
+    border-width: 3px;
+  }
+}
+
+.game ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 56.5px;
+  margin-bottom: 23.5px;
+}
+
+.game ul li {
+  width: 160px;
+  height: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 540px) {
+  .game ul li {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.game ul li:nth-child(1) {
+  border-right: 5px solid #ED494C;
+  border-bottom: 5px solid #ED494C;
+}
+
+.game ul li:nth-child(2) {
+  border-right: 5px solid #ED494C;
+  border-bottom: 5px solid #ED494C;
+  border-left: 5px solid #ED494C;
+}
+
+.game ul li:nth-child(3) {
+  border-bottom: 5px solid #ED494C;
+  border-left: 5px solid #ED494C;
+}
+
+.game ul li:nth-child(4) {
+  border-top: 5px solid #ED494C;
+  border-right: 5px solid #ED494C;
+  border-bottom: 5px solid #ED494C;
+}
+
+.game ul li:nth-child(5) {
+  border: 5px solid #ED494C;
+}
+
+.game ul li:nth-child(6) {
+  border-top: 5px solid #ED494C;
+  border-bottom: 5px solid #ED494C;
+  border-left: 5px solid #ED494C;
+}
+
+.game ul li:nth-child(7) {
+  border-top: 5px solid #ED494C;
+  border-right: 5px solid #ED494C;
+}
+
+.game ul li:nth-child(8) {
+  border-top: 5px solid #ED494C;
+  border-right: 5px solid #ED494C;
+  border-left: 5px solid #ED494C;
+}
+
+.game ul li:nth-child(9) {
+  border-top: 5px solid #ED494C;
+  border-left: 5px solid #ED494C;
+}
+
+.game button {
+  background: #ED494C;
+}
+
+.game button a {
+  color: #FFFFFF;
+  width: 100%;
+  font-weight: bold;
+}
+
+@media (max-width: 540px) {
+  .game button a {
+    font-size: 24px;
+  }
+}
+
+.game button:hover {
+  background-color: #FFFFFF;
+}
+
+.game button:hover a {
+  color: #ED494C;
 }
 /*# sourceMappingURL=all.css.map */

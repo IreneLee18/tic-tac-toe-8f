@@ -43,3 +43,64 @@ $black: #000000;
     @include position-center-rotate(315deg);
   }
 }
+
+@mixin btn-color($bg, $c) {
+  background: $bg;
+
+  a {
+    color: $c;
+    width: 100%;
+    font-weight: bold;
+
+    @media (max-width:540px) {
+      font-size: 24px;
+    }
+  }
+
+  &:hover {
+    background-color: $c;
+
+    a {
+      color: $bg;
+    }
+  }
+}
+
+@mixin noughts-solid($ls,$lb,$ss,$sb,$color) {
+  position: relative;
+
+  &::before {
+    content: '';
+    @include size($ls, $ls);
+    @include position-center;
+    border-radius: 50%;
+    border: $lb solid $color;
+
+    @media (max-width:540px) {
+      @include size($ss,$ss);
+      border-width: $sb;
+    }
+  }  
+}
+@mixin crosses-solid ($w,$h,$sw,$sh,$color) {
+  position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        @include size($h, $w);
+        background: $color;
+
+        @media (max-width:540px) {
+          @include size($sw, $sh);
+        }
+      }
+
+      @include crosses-rotate;
+}
+
+@mixin scores ($bg, $t, $l, $b, $r) {
+  @include size (54px, 100%);
+  background: $bg;
+  border-radius: $t $l $b $r;
+}

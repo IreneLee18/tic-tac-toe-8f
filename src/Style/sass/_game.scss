@@ -1,0 +1,73 @@
+.game {
+  
+
+  ul {
+    @include flex-center;
+    flex-wrap: wrap;
+    margin-top: 56.5px;
+    margin-bottom: 23.5px;
+
+    li {
+      @include size(160px, 160px);
+      @include flex-center;
+      box-sizing: border-box;
+
+      @media (max-width:540px) {
+        @include size(100px, 100px);
+      }
+
+      &:nth-child(1) {
+        border-right: 5px solid $secondary;
+        border-bottom: 5px solid $secondary;
+      }
+
+      &:nth-child(2) {
+        border-right: 5px solid $secondary;
+        border-bottom: 5px solid $secondary;
+        border-left: 5px solid $secondary;
+      }
+
+      &:nth-child(3) {
+        border-bottom: 5px solid $secondary;
+        border-left: 5px solid $secondary;
+      }
+
+      &:nth-child(4) {
+        border-top: 5px solid $secondary;
+        border-right: 5px solid $secondary;
+        border-bottom: 5px solid $secondary;
+      }
+
+      &:nth-child(5) {
+        border: 5px solid $secondary;
+      }
+
+      &:nth-child(6) {
+        border-top: 5px solid $secondary;
+        border-bottom: 5px solid $secondary;
+        border-left: 5px solid $secondary;
+      }
+
+      &:nth-child(7) {
+        border-top: 5px solid $secondary;
+        border-right: 5px solid $secondary;
+      }
+
+      &:nth-child(8) {
+        border-top: 5px solid $secondary;
+        border-right: 5px solid $secondary;
+        border-left: 5px solid $secondary;
+      }
+
+      &:nth-child(9) {
+        border-top: 5px solid $secondary;
+        border-left: 5px solid $secondary;
+      }
+
+    }
+  }
+
+  button {
+    @include btn-color($secondary, $white);
+  }
+}

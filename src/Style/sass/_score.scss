@@ -1,0 +1,75 @@
+header {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+
+  .your-turn {
+    font-size: 20px;
+    color: $white;
+
+    @media (max-width:540px) {
+      font-size: 14px;
+    }
+  }
+
+  .scores-group {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 8px;
+  }
+
+  .vs {
+    @include gameSize(70px, 71px, 20px);
+    @include flex-center;
+    border-radius: 8px 8px 0px 0px;
+    background: $black;
+    color: $white;
+
+    @media (max-width:540px) {
+      @include gameSize(40px, 51px, 20px);
+    }
+  }
+
+  .scores {
+    box-sizing: border-box;
+    @include size(235px, 64px);
+    display: flex;
+    border: 4px solid $black;
+    z-index: 1;
+
+    @media (max-width:540px) {
+      @include size(130px, 44px);
+    }
+
+    &:first-child {
+      border-radius: 8px 0px 0px 8px;
+    }
+
+    &:last-child {
+      border-radius: 0px 8px 8px 0px;
+    }
+
+    .scores-item {
+      @include gameSize (171px, 100%, 48px);
+      background: $white;
+      @include flex-center;
+
+      @media (max-width:540px) {
+        @include gameSize(94px, 100%, 24px);
+      }
+    }
+
+    .crosses-scores {
+      @include scores($secondary, 4px, 0px, 0px, 4px);
+      @include crosses-solid(36px, 5px, 24px, 3px, $white);
+      border-right: 4px solid $black;
+    }
+
+    .noughts-scores {
+      @include scores($black, 0px, 4px, 4px, 0px);
+      @include noughts-solid(30px, 5px, 24px, 3px, $white);
+      border-left: 4px solid $black;
+    }
+  }
+}

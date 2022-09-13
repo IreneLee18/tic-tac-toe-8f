@@ -2,10 +2,8 @@
   color: $white;
 
   ul {
-    display: flex;
+    @include flex-center;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
 
     li {
       @include gameSize(180px, 180px, 100px);
@@ -23,20 +21,7 @@
     }
 
     .noughts-solid {
-      position: relative;
-
-      &::before {
-        content: '';
-        @include size(100px, 100px);
-        @include position-center;
-        border-radius: 50%;
-        border: 10px solid $primary;
-
-        @media (max-width:540px) {
-          @include size(60px, 60px);
-          border-width: 6px;
-        }
-      }
+      @include noughts-solid(100px, 10px, 60px, 6px, $primary);
     }
 
     .noughts-border {
@@ -73,20 +58,7 @@
     }
 
     .crosses-solid {
-      position: relative;
-
-      &::before,
-      &::after {
-        content: '';
-        @include size(120px, 10px);
-        background: $primary;
-        @media (max-width:540px) {
-          @include size(60px, 5px);
-        }
-      }
-
-      @include crosses-rotate;
-
+      @include crosses-solid(120px, 10px, 60px, 5px, $primary);
     }
 
     .crosses-border {
@@ -97,6 +69,7 @@
         content: '';
         @include size(120px, 14px);
         background: $white;
+
         @media (max-width:540px) {
           @include size(60px, 10px);
         }
@@ -112,6 +85,7 @@
           @include size (116px, 10px);
           background: $black;
           z-index: 1;
+
           @media (max-width:540px) {
             @include size(55px, 5px);
           }
@@ -129,23 +103,6 @@
   }
 
   button {
-    background: $white;
-
-    a {
-      color: $primary;
-      width: 100%;
-      font-weight: bold;
-      @media (max-width:540px) {
-        font-size: 24px;
-      }
-    }
-
-    &:hover {
-      background-color: $primary;
-
-      a {
-        color: $white;
-      }
-    }
+    @include btn-color ($white, $primary);
   }
 }
