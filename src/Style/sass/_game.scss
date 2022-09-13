@@ -8,13 +8,9 @@
     margin-bottom: 23.5px;
 
     li {
-      @include size(160px, 160px);
+      @include size(160px, 160px,100px,100px);
       @include flex-center;
       box-sizing: border-box;
-
-      @media (max-width:540px) {
-        @include size(100px, 100px);
-      }
 
       &:nth-child(1) {
         border-right: 5px solid $secondary;

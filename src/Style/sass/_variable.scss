@@ -82,13 +82,12 @@ $black: #000000;
 
   &::before {
     content: '';
-    @include size($ls, $ls);
+    @include size($ls, $ls, $ss, $ss);
     @include position-center;
     border-radius: 50%;
     border: $lb solid $color;
 
     @media (max-width:540px) {
-      @include size($ss, $ss);
       border-width: $sb;
     }
   }
@@ -100,19 +99,15 @@ $black: #000000;
   &::before,
   &::after {
     content: '';
-    @include size($h, $w);
+    @include size($h, $w, $sw, $sh);
     background: $color;
-
-    @media (max-width:540px) {
-      @include size($sw, $sh);
-    }
   }
 
   @include crosses-rotate;
 }
 
 @mixin scores ($bg, $t, $l, $b, $r) {
-  @include size (54px, 100%);
+  @include size (54px, 100%, 54px, 100%);
   background: $bg;
   border-radius: $t $l $b $r;
 }
