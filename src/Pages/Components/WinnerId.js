@@ -1,7 +1,4 @@
-import { useParams } from "react-router-dom";
-
 function WinnerId({ winnerId }) {
-  const { id } = useParams;
   return (
     <>
       {winnerId === "crosses" || winnerId === "noughts" ? (
@@ -16,7 +13,6 @@ function WinnerId({ winnerId }) {
         </main>
       ) : (
         <main className="winner-both">
-          {/* <h1>WINNER!</h1> */}
           <div className="both-noughts">
             <h1>
               <div>DRAW!</div>
