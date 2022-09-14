@@ -1,5 +1,4 @@
 .game {
-  
 
   ul {
     @include flex-center;
@@ -8,9 +7,16 @@
     margin-bottom: 23.5px;
 
     li {
-      @include size(160px, 160px,100px,100px);
+      @include size(160px, 160px, 100px, 100px);
       @include flex-center;
       box-sizing: border-box;
+      cursor: pointer;
+      // input {
+      //   @include size(100%, 100%, 100%, 100%);
+      //   outline: none;
+      //   opacity: 0.5;
+      //   cursor: pointer;
+      // }
 
       &:nth-child(1) {
         border-right: 5px solid $secondary;
@@ -61,6 +67,14 @@
       }
 
     }
+  }
+
+  .crosses {
+    @include crosses-solid (96px, 10px, 45px, 5px, $white)
+  }
+
+  .noughts {
+    @include noughts-solid(96px, 10px, 45px, 5px, $black)
   }
 
   button {
