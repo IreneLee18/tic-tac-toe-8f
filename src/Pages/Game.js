@@ -92,19 +92,16 @@ function Game() {
       case state.value1 === state.value4 &&
         state.value1 === state.value7 &&
         state.value1 !== "":
-        console.log("1");
         isWinner(state.value1);
         break;
       case state.value2 === state.value5 &&
         state.value2 === state.value8 &&
         state.value2 !== "":
-        console.log("2");
         isWinner(state.value2);
         break;
       case state.value3 === state.value6 &&
         state.value3 === state.value9 &&
         state.value3 !== "":
-        console.log("3");
         isWinner(state.value3);
         break;
       case Object.values(state).includes(""):
