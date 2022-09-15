@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect, useReducer, useRef } from "react";
+import GameValue from "./Components/GameValue";
 const reducer = (state, action) => {
-  // console.log(action.type, action.payload);
   return { ...state, [action.type]: action.payload };
 };
 function Game() {
@@ -36,27 +36,16 @@ function Game() {
     }
     if (!crossesScore) {
       crosses.current = 0;
-      setScores((state)=>({...state,crosses:crosses.current}))
+      setScores((state) => ({ ...state, crosses: crosses.current }));
     }
     if (!noughtsScore) {
       noughts.current = 0;
-      setScores((state)=>({...state,noughts:noughts.current}))
+      setScores((state) => ({ ...state, noughts: noughts.current }));
     }
   }, [crossesScore, lastValue, noughtsScore]);
 
-  // 設定dispatch & payload & 切換目前要下圈還是叉
-  const handleClick = (e) => {
-    dispatch({ type: e.target.id, payload: currentValue });
-    if (currentValue === "noughts") {
-      setCurrentValue("crosses");
-    } else {
-      setCurrentValue("noughts");
-    }
-  };
-
   // 誰是贏家函式
   const isWinner = (value) => {
-    console.log("1", value, "1");
     if (value === "crosses") {
       crosses.current++;
       setScores((state) => ({ ...state, crosses: crosses.current }));
@@ -165,18 +154,12 @@ function Game() {
           <div className="your-turn">YOUR TURN!</div>
         </header>
         <ul>
-          {/* {state.map((item)=>(
-            <li onClick={handleClick} id={item} className={item} key={item}></li>  
-          ))} */}
-          <li onClick={handleClick} id="value1" className={state.value1}></li>
-          <li onClick={handleClick} id="value2" className={state.value2}></li>
-          <li onClick={handleClick} id="value3" className={state.value3}></li>
-          <li onClick={handleClick} id="value4" className={state.value4}></li>
-          <li onClick={handleClick} id="value5" className={state.value5}></li>
-          <li onClick={handleClick} id="value6" className={state.value6}></li>
-          <li onClick={handleClick} id="value7" className={state.value7}></li>
-          <li onClick={handleClick} id="value8" className={state.value8}></li>
-          <li onClick={handleClick} id="value9" className={state.value9}></li>
+          <GameValue
+            state={state}
+            dispatch={dispatch}
+            currentValue={currentValue}
+            setCurrentValue={setCurrentValue}
+          />
         </ul>
         <button
           onClick={() => {
